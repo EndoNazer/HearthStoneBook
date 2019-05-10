@@ -294,53 +294,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-j7-sc3">
                                 <rect key="frame" x="31" y="84" width="352" height="107.5"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyp-qg-HTo" userLabel="CardsView">
-                                <rect key="frame" x="87" y="215" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZJ-NI-iZF" userLabel="ButtonsView">
+                                <rect key="frame" x="83" y="341" width="248" height="537.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MenuTexture" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-w7-EfU">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="6S3-5D-lfU"/>
-                                            <constraint firstAttribute="height" constant="128" id="wI3-6A-Gzx"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-H2-edn">
-                                        <rect key="frame" x="28" y="35" width="183" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="65"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="3" height="1"/>
-                                    </label>
-                                </subviews>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZJ-NI-iZF" userLabel="ButtonsView">
-                                <rect key="frame" x="81" y="518" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4d-6h-lqp">
-                                        <rect key="frame" x="6" y="21" width="228" height="85"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="228" id="cTg-kD-zhG"/>
-                                            <constraint firstAttribute="height" constant="85" id="yd3-jI-XPb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="30"/>
-                                        <state key="normal" title="Back" backgroundImage="Button">
-                                            <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="Yua-21-adR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gto-jR-rej">
-                                        <rect key="frame" x="6" y="21" width="228" height="85"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="85" id="qF4-jD-M0H"/>
-                                            <constraint firstAttribute="width" constant="228" id="yRx-Dr-lK6"/>
-                                        </constraints>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuU-h8-Bf7">
+                                        <rect key="frame" x="0.0" y="106" width="248" height="54"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gto-jR-rej">
+                                        <rect key="frame" x="0.0" y="170" width="248" height="86"/>
                                         <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="22"/>
                                         <state key="normal" title="Search by name" backgroundImage="Button">
                                             <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
@@ -349,32 +313,18 @@
                                             <action selector="nameCardsSearchAction:" destination="qSc-a0-BkH" eventType="touchUpInside" id="rd3-Ip-bXZ"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name of card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuU-h8-Bf7">
-                                        <rect key="frame" x="6" y="39" width="228" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="D5y-MB-1LM"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfg-KG-zcz">
-                                        <rect key="frame" x="6" y="39" width="228" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="82s-gW-nfT"/>
-                                            <constraint firstAttribute="height" constant="50" id="FDh-uW-sPA"/>
-                                            <constraint firstAttribute="width" constant="228" id="Tv1-iy-dIa"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLR-2n-5IB">
-                                        <rect key="frame" x="6" y="21" width="228" height="85"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="228" id="7ut-HF-nee"/>
-                                            <constraint firstAttribute="height" constant="85" id="CCK-db-FFa"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4d-6h-lqp">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="86"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="30"/>
+                                        <state key="normal" title="Back" backgroundImage="Button">
+                                            <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="Yua-21-adR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLR-2n-5IB">
+                                        <rect key="frame" x="0.0" y="329.5" width="248" height="86"/>
                                         <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="22"/>
                                         <state key="normal" title="Search by class" backgroundImage="Button">
                                             <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
@@ -383,15 +333,78 @@
                                             <action selector="classCardsSearchAction:" destination="qSc-a0-BkH" eventType="touchUpInside" id="nYZ-YZ-KMJ"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the class" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfg-KG-zcz">
+                                        <rect key="frame" x="0.0" y="266" width="248" height="53.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="zLR-2n-5IB" firstAttribute="height" secondItem="QZJ-NI-iZF" secondAttribute="height" multiplier="0.16" id="0xz-Wu-7Jz"/>
+                                    <constraint firstItem="B4d-6h-lqp" firstAttribute="centerX" secondItem="QZJ-NI-iZF" secondAttribute="centerX" id="2fT-vN-lwi"/>
+                                    <constraint firstItem="gto-jR-rej" firstAttribute="top" secondItem="TuU-h8-Bf7" secondAttribute="bottom" constant="10" id="47f-L8-bi6"/>
+                                    <constraint firstItem="zLR-2n-5IB" firstAttribute="width" secondItem="QZJ-NI-iZF" secondAttribute="width" id="9nd-u3-jfi"/>
+                                    <constraint firstItem="B4d-6h-lqp" firstAttribute="top" secondItem="QZJ-NI-iZF" secondAttribute="top" id="Blm-1N-yOn"/>
+                                    <constraint firstItem="TuU-h8-Bf7" firstAttribute="width" secondItem="QZJ-NI-iZF" secondAttribute="width" id="IiA-Cv-6If"/>
+                                    <constraint firstItem="Yfg-KG-zcz" firstAttribute="top" secondItem="gto-jR-rej" secondAttribute="bottom" constant="10" id="LRw-If-HTC"/>
+                                    <constraint firstItem="TuU-h8-Bf7" firstAttribute="top" secondItem="B4d-6h-lqp" secondAttribute="bottom" constant="20" id="Phb-Vk-vmi"/>
+                                    <constraint firstItem="zLR-2n-5IB" firstAttribute="top" secondItem="Yfg-KG-zcz" secondAttribute="bottom" constant="10" id="Qu4-nS-klZ"/>
+                                    <constraint firstItem="TuU-h8-Bf7" firstAttribute="height" secondItem="QZJ-NI-iZF" secondAttribute="height" multiplier="0.1" id="UVh-aG-pQr"/>
+                                    <constraint firstItem="Yfg-KG-zcz" firstAttribute="height" secondItem="QZJ-NI-iZF" secondAttribute="height" multiplier="0.1" id="UcA-bf-By0"/>
+                                    <constraint firstItem="gto-jR-rej" firstAttribute="centerX" secondItem="QZJ-NI-iZF" secondAttribute="centerX" id="WsX-LU-r5n"/>
+                                    <constraint firstItem="Yfg-KG-zcz" firstAttribute="centerX" secondItem="QZJ-NI-iZF" secondAttribute="centerX" id="fAt-ZQ-dF9"/>
+                                    <constraint firstItem="gto-jR-rej" firstAttribute="width" secondItem="QZJ-NI-iZF" secondAttribute="width" id="h2r-of-Nyx"/>
+                                    <constraint firstItem="Yfg-KG-zcz" firstAttribute="width" secondItem="QZJ-NI-iZF" secondAttribute="width" id="jAk-v1-22I"/>
+                                    <constraint firstItem="gto-jR-rej" firstAttribute="height" secondItem="QZJ-NI-iZF" secondAttribute="height" multiplier="0.16" id="lrX-qU-fuW"/>
+                                    <constraint firstItem="TuU-h8-Bf7" firstAttribute="centerX" secondItem="QZJ-NI-iZF" secondAttribute="centerX" id="mU2-on-0K8"/>
+                                    <constraint firstItem="zLR-2n-5IB" firstAttribute="centerX" secondItem="QZJ-NI-iZF" secondAttribute="centerX" id="szz-1d-64M"/>
+                                    <constraint firstItem="B4d-6h-lqp" firstAttribute="width" secondItem="QZJ-NI-iZF" secondAttribute="width" id="xOv-tR-Fb8"/>
+                                    <constraint firstItem="B4d-6h-lqp" firstAttribute="height" secondItem="QZJ-NI-iZF" secondAttribute="height" multiplier="0.16" id="zH2-Gh-dIL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyp-qg-HTo" userLabel="CardsView">
+                                <rect key="frame" x="83" y="211.5" width="248" height="89.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuTexture" translatesAutoresizingMaskIntoConstraints="NO" id="sF5-w7-EfU">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-H2-edn">
+                                        <rect key="frame" x="37" y="9" width="174" height="71.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="65"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="3" height="1"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eMe-H2-edn" firstAttribute="height" secondItem="Dyp-qg-HTo" secondAttribute="height" multiplier="0.8" id="1BA-Vv-z7I"/>
+                                    <constraint firstAttribute="bottom" secondItem="sF5-w7-EfU" secondAttribute="bottom" id="BYM-Ul-nAL"/>
+                                    <constraint firstItem="sF5-w7-EfU" firstAttribute="top" secondItem="Dyp-qg-HTo" secondAttribute="top" id="Hy4-DG-zYO"/>
+                                    <constraint firstItem="eMe-H2-edn" firstAttribute="width" secondItem="Dyp-qg-HTo" secondAttribute="width" multiplier="0.7" id="K5o-Lq-RGn"/>
+                                    <constraint firstItem="eMe-H2-edn" firstAttribute="centerY" secondItem="Dyp-qg-HTo" secondAttribute="centerY" id="RVx-dT-JrN"/>
+                                    <constraint firstAttribute="trailing" secondItem="sF5-w7-EfU" secondAttribute="trailing" id="Tkq-gx-a9o"/>
+                                    <constraint firstItem="sF5-w7-EfU" firstAttribute="leading" secondItem="Dyp-qg-HTo" secondAttribute="leading" id="Vux-EL-FWO"/>
+                                    <constraint firstItem="eMe-H2-edn" firstAttribute="centerX" secondItem="Dyp-qg-HTo" secondAttribute="centerX" id="idY-Ro-ilD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Dyp-qg-HTo" firstAttribute="top" secondItem="7xB-j7-sc3" secondAttribute="bottom" constant="20" id="0JS-nT-Qh3"/>
                             <constraint firstItem="7xB-j7-sc3" firstAttribute="top" secondItem="id5-vj-s8Z" secondAttribute="top" constant="40" id="3Fd-Im-6wY"/>
                             <constraint firstItem="7xB-j7-sc3" firstAttribute="centerX" secondItem="SJx-Cm-VQO" secondAttribute="centerX" id="8hM-yQ-Y4p"/>
                             <constraint firstItem="7xB-j7-sc3" firstAttribute="height" secondItem="SJx-Cm-VQO" secondAttribute="height" multiplier="0.12" id="8mZ-2G-QwB"/>
                             <constraint firstItem="7xB-j7-sc3" firstAttribute="width" secondItem="SJx-Cm-VQO" secondAttribute="width" multiplier="0.85" id="EdT-NQ-2H4"/>
+                            <constraint firstItem="QZJ-NI-iZF" firstAttribute="width" secondItem="SJx-Cm-VQO" secondAttribute="width" multiplier="0.6" id="HPA-N3-ikg"/>
+                            <constraint firstItem="QZJ-NI-iZF" firstAttribute="centerX" secondItem="SJx-Cm-VQO" secondAttribute="centerX" id="Ntn-tl-kdO"/>
+                            <constraint firstItem="Dyp-qg-HTo" firstAttribute="width" secondItem="SJx-Cm-VQO" secondAttribute="width" multiplier="0.6" id="PJh-Yj-3yQ"/>
+                            <constraint firstItem="QZJ-NI-iZF" firstAttribute="top" secondItem="Dyp-qg-HTo" secondAttribute="bottom" constant="40" id="S9Y-qq-k1j"/>
+                            <constraint firstItem="Dyp-qg-HTo" firstAttribute="centerX" secondItem="SJx-Cm-VQO" secondAttribute="centerX" id="Xn2-wO-4I3"/>
+                            <constraint firstItem="Dyp-qg-HTo" firstAttribute="height" secondItem="SJx-Cm-VQO" secondAttribute="height" multiplier="0.1" id="ZMP-RF-6tC"/>
+                            <constraint firstItem="QZJ-NI-iZF" firstAttribute="height" secondItem="SJx-Cm-VQO" secondAttribute="height" multiplier="0.6" id="g8u-6A-arO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="id5-vj-s8Z"/>
                     </view>
@@ -526,7 +539,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk9-YQ-oxt">
-                                <rect key="frame" x="100" y="254" width="214" height="54"/>
+                                <rect key="frame" x="107" y="254" width="200.5" height="54"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="62"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -554,7 +567,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Coming soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-mj-Kao">
-                                <rect key="frame" x="45.5" y="600" width="323" height="54"/>
+                                <rect key="frame" x="56" y="600" width="302.5" height="54"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Fph-UX-yRH"/>
@@ -717,6 +730,6 @@
         <image name="MenuTexture" width="519" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e3m-I0-gJU"/>
+        <segue reference="Yua-21-adR"/>
     </inferredMetricsTieBreakers>
 </document>
