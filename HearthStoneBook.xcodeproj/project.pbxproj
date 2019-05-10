@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65AE3921DF1934174B6EB489 /* Pods_HearthStoneBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA852A1BEC649D6986C710B5 /* Pods_HearthStoneBook.framework */; };
+		A51BF3A9227321520038CFDB /* CardsByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */; };
+		A51BF3AE227324AC0038CFDB /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */; };
+		A51BF3B0227324B90038CFDB /* CardBackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */; };
+		A5C1537222838F0D0064179A /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1537122838F0D0064179A /* Variables.swift */; };
+		A5C1537422838F290064179A /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1537322838F290064179A /* Structures.swift */; };
+		A5C1537622838F880064179A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1537522838F880064179A /* Functions.swift */; };
+		A5EB484022687F6A0035E761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB483F22687F6A0035E761 /* AppDelegate.swift */; };
+		A5EB484522687F6A0035E761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EB484322687F6A0035E761 /* Main.storyboard */; };
+		A5EB484722687F6B0035E761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5EB484622687F6B0035E761 /* Assets.xcassets */; };
+		A5EB484A22687F6B0035E761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EB484822687F6B0035E761 /* LaunchScreen.storyboard */; };
+		A5EB4852226896C50035E761 /* Belwe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5EB48512268831C0035E761 /* Belwe.ttf */; };
+		A5EB48542268972D0035E761 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB48532268972D0035E761 /* StartViewController.swift */; };
+		A5EB4856226897C40035E761 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB4855226897C40035E761 /* SettingsViewController.swift */; };
+		A5EB485E226A593E0035E761 /* CardBacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB485D226A593E0035E761 /* CardBacksViewController.swift */; };
+		A5EB4860226A59710035E761 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB485F226A59710035E761 /* CardsViewController.swift */; };
+		A5EB4862226AFC000035E761 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB4861226AFC000035E761 /* HeroesViewController.swift */; };
+		A5EB4865226AFDBB0035E761 /* SingleViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EB4864226AFDBB0035E761 /* SingleViews.storyboard */; };
+		A5EB4867226AFE140035E761 /* SingleCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB4866226AFE140035E761 /* SingleCardViewController.swift */; };
+		A5EB4869226AFE250035E761 /* SingleHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB4868226AFE250035E761 /* SingleHeroViewController.swift */; };
+		A5EB486B226AFE390035E761 /* SingleCardBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB486A226AFE390035E761 /* SingleCardBackViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36CC12EF6F42D8B977AAD775 /* Pods-HearthStoneBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthStoneBook.debug.xcconfig"; path = "Target Support Files/Pods-HearthStoneBook/Pods-HearthStoneBook.debug.xcconfig"; sourceTree = "<group>"; };
+		7DF9E1F7B58E21C45B190DBD /* Pods-HearthStoneBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthStoneBook.release.xcconfig"; path = "Target Support Files/Pods-HearthStoneBook/Pods-HearthStoneBook.release.xcconfig"; sourceTree = "<group>"; };
+		A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsByClassViewController.swift; sourceTree = "<group>"; };
+		A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5C1537122838F0D0064179A /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		A5C1537322838F290064179A /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
+		A5C1537522838F880064179A /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		A5EB483C22687F6A0035E761 /* HearthStoneBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthStoneBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EB483F22687F6A0035E761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5EB484422687F6A0035E761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5EB484622687F6B0035E761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5EB484922687F6B0035E761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5EB484B22687F6B0035E761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EB48512268831C0035E761 /* Belwe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Belwe.ttf; path = ../../../../Library/Fonts/Belwe.ttf; sourceTree = "<group>"; };
+		A5EB48532268972D0035E761 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		A5EB4855226897C40035E761 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5EB485D226A593E0035E761 /* CardBacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBacksViewController.swift; sourceTree = "<group>"; };
+		A5EB485F226A59710035E761 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		A5EB4861226AFC000035E761 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
+		A5EB4864226AFDBB0035E761 /* SingleViews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleViews.storyboard; sourceTree = "<group>"; };
+		A5EB4866226AFE140035E761 /* SingleCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardViewController.swift; sourceTree = "<group>"; };
+		A5EB4868226AFE250035E761 /* SingleHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHeroViewController.swift; sourceTree = "<group>"; };
+		A5EB486A226AFE390035E761 /* SingleCardBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardBackViewController.swift; sourceTree = "<group>"; };
+		BA852A1BEC649D6986C710B5 /* Pods_HearthStoneBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthStoneBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5EB483922687F6A0035E761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65AE3921DF1934174B6EB489 /* Pods_HearthStoneBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37A94B659AB914F232F952B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA852A1BEC649D6986C710B5 /* Pods_HearthStoneBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		999F214E1EDA764C288459A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36CC12EF6F42D8B977AAD775 /* Pods-HearthStoneBook.debug.xcconfig */,
+				7DF9E1F7B58E21C45B190DBD /* Pods-HearthStoneBook.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A51BF3AA2273215F0038CFDB /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB4861226AFC000035E761 /* HeroesViewController.swift */,
+				A5EB4868226AFE250035E761 /* SingleHeroViewController.swift */,
+			);
+			path = Unused;
+			sourceTree = "<group>";
+		};
+		A51BF3AB227321980038CFDB /* SingleViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB4866226AFE140035E761 /* SingleCardViewController.swift */,
+				A5EB486A226AFE390035E761 /* SingleCardBackViewController.swift */,
+			);
+			path = SingleViews;
+			sourceTree = "<group>";
+		};
+		A51BF3AC227321B50038CFDB /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB48532268972D0035E761 /* StartViewController.swift */,
+				A5EB4855226897C40035E761 /* SettingsViewController.swift */,
+				A5EB485D226A593E0035E761 /* CardBacksViewController.swift */,
+				A5EB485F226A59710035E761 /* CardsViewController.swift */,
+				A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		A587707D227799FF00DA8DFE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */,
+				A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A5C1537022838EE10064179A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5C1537122838F0D0064179A /* Variables.swift */,
+				A5C1537322838F290064179A /* Structures.swift */,
+				A5C1537522838F880064179A /* Functions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5EB483322687F6A0035E761 = {
+			isa = PBXGroup;
+			children = (
+				A5EB483E22687F6A0035E761 /* HearthStoneBook */,
+				A5EB483D22687F6A0035E761 /* Products */,
+				999F214E1EDA764C288459A7 /* Pods */,
+				37A94B659AB914F232F952B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A5EB483D22687F6A0035E761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB483C22687F6A0035E761 /* HearthStoneBook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5EB483E22687F6A0035E761 /* HearthStoneBook */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB486C226AFE480035E761 /* Storyboards */,
+				A5EB4863226AFD7A0035E761 /* Controllers */,
+				A5C1537022838EE10064179A /* Model */,
+				A5EB483F22687F6A0035E761 /* AppDelegate.swift */,
+				A5EB484622687F6B0035E761 /* Assets.xcassets */,
+				A5EB484B22687F6B0035E761 /* Info.plist */,
+				A5EB48512268831C0035E761 /* Belwe.ttf */,
+			);
+			path = HearthStoneBook;
+			sourceTree = "<group>";
+		};
+		A5EB4863226AFD7A0035E761 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A587707D227799FF00DA8DFE /* Cells */,
+				A51BF3AC227321B50038CFDB /* MainViews */,
+				A51BF3AB227321980038CFDB /* SingleViews */,
+				A51BF3AA2273215F0038CFDB /* Unused */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A5EB486C226AFE480035E761 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB484322687F6A0035E761 /* Main.storyboard */,
+				A5EB4864226AFDBB0035E761 /* SingleViews.storyboard */,
+				A5EB484822687F6B0035E761 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5EB483B22687F6A0035E761 /* HearthStoneBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5EB484E22687F6B0035E761 /* Build configuration list for PBXNativeTarget "HearthStoneBook" */;
+			buildPhases = (
+				19125C905912FB2BF966C2E1 /* [CP] Check Pods Manifest.lock */,
+				A5EB483822687F6A0035E761 /* Sources */,
+				A5EB483922687F6A0035E761 /* Frameworks */,
+				A5EB483A22687F6A0035E761 /* Resources */,
+				EC6A4F99AA08A1B9C5098273 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HearthStoneBook;
+			productName = HearthStoneBook;
+			productReference = A5EB483C22687F6A0035E761 /* HearthStoneBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5EB483422687F6A0035E761 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Даниил";
+				TargetAttributes = {
+					A5EB483B22687F6A0035E761 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A5EB483722687F6A0035E761 /* Build configuration list for PBXProject "HearthStoneBook" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5EB483322687F6A0035E761;
+			productRefGroup = A5EB483D22687F6A0035E761 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5EB483B22687F6A0035E761 /* HearthStoneBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5EB483A22687F6A0035E761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EB4852226896C50035E761 /* Belwe.ttf in Resources */,
+				A5EB484A22687F6B0035E761 /* LaunchScreen.storyboard in Resources */,
+				A5EB484722687F6B0035E761 /* Assets.xcassets in Resources */,
+				A5EB4865226AFDBB0035E761 /* SingleViews.storyboard in Resources */,
+				A5EB484522687F6A0035E761 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19125C905912FB2BF966C2E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HearthStoneBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6A4F99AA08A1B9C5098273 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HearthStoneBook/Pods-HearthStoneBook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HearthStoneBook/Pods-HearthStoneBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5EB483822687F6A0035E761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EB486B226AFE390035E761 /* SingleCardBackViewController.swift in Sources */,
+				A5C1537222838F0D0064179A /* Variables.swift in Sources */,
+				A5EB4869226AFE250035E761 /* SingleHeroViewController.swift in Sources */,
+				A5C1537622838F880064179A /* Functions.swift in Sources */,
+				A5EB4862226AFC000035E761 /* HeroesViewController.swift in Sources */,
+				A51BF3AE227324AC0038CFDB /* CardCollectionViewCell.swift in Sources */,
+				A5EB484022687F6A0035E761 /* AppDelegate.swift in Sources */,
+				A51BF3A9227321520038CFDB /* CardsByClassViewController.swift in Sources */,
+				A5EB4867226AFE140035E761 /* SingleCardViewController.swift in Sources */,
+				A5EB485E226A593E0035E761 /* CardBacksViewController.swift in Sources */,
+				A5C1537422838F290064179A /* Structures.swift in Sources */,
+				A5EB4860226A59710035E761 /* CardsViewController.swift in Sources */,
+				A5EB48542268972D0035E761 /* StartViewController.swift in Sources */,
+				A51BF3B0227324B90038CFDB /* CardBackCollectionViewCell.swift in Sources */,
+				A5EB4856226897C40035E761 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A5EB484322687F6A0035E761 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5EB484422687F6A0035E761 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5EB484822687F6B0035E761 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5EB484922687F6B0035E761 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5EB484C22687F6B0035E761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A5EB484D22687F6B0035E761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5EB484F22687F6B0035E761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36CC12EF6F42D8B977AAD775 /* Pods-HearthStoneBook.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DM5DKMVJ3;
+				INFOPLIST_FILE = HearthStoneBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = EndoTools.HearthStoneBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5EB485022687F6B0035E761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DF9E1F7B58E21C45B190DBD /* Pods-HearthStoneBook.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DM5DKMVJ3;
+				INFOPLIST_FILE = HearthStoneBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = EndoTools.HearthStoneBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5EB483722687F6A0035E761 /* Build configuration list for PBXProject "HearthStoneBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EB484C22687F6B0035E761 /* Debug */,
+				A5EB484D22687F6B0035E761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EB484E22687F6B0035E761 /* Build configuration list for PBXNativeTarget "HearthStoneBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EB484F22687F6B0035E761 /* Debug */,
+				A5EB485022687F6B0035E761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5EB483422687F6A0035E761 /* Project object */;
+}
