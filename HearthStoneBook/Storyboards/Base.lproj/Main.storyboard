@@ -429,82 +429,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-Cy-Bkh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-Cy-Bkh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoV-Ah-PZQ">
-                                <rect key="frame" x="93" y="568" width="228" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="bPY-aB-hx9"/>
-                                    <constraint firstAttribute="width" constant="228" id="n96-Kc-cDn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="30"/>
-                                <state key="normal" title="Lang:" backgroundImage="Button">
-                                    <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="langButtonAction:" destination="Wcw-Ay-uz7" eventType="touchUpInside" id="2hP-hO-OWl"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MenuTexture" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-O0-fbR">
-                                <rect key="frame" x="87" y="215" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="92H-Sk-z4Z"/>
-                                    <constraint firstAttribute="height" constant="128" id="cJl-2G-hHa"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIf-ye-EOG">
-                                <rect key="frame" x="98" y="254" width="218" height="53"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="jz6-SL-Jk9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="55"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="3" height="1"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dew-gg-8tM">
                                 <rect key="frame" x="31" y="84" width="352" height="107.5"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdD-6U-qcI">
-                                <rect key="frame" x="93" y="473" width="228" height="85"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZT-nF-SyF" userLabel="SettingsView">
+                                <rect key="frame" x="83" y="211.5" width="248" height="89.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuTexture" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-O0-fbR">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIf-ye-EOG">
+                                        <rect key="frame" x="12" y="9" width="224" height="71.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="3" height="1"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="PkM-SR-Uma"/>
-                                    <constraint firstAttribute="width" constant="228" id="hdm-6C-st0"/>
+                                    <constraint firstItem="nIf-ye-EOG" firstAttribute="centerX" secondItem="iZT-nF-SyF" secondAttribute="centerX" id="0Oc-fN-w7O"/>
+                                    <constraint firstItem="DVy-O0-fbR" firstAttribute="top" secondItem="iZT-nF-SyF" secondAttribute="top" id="99l-d8-X3v"/>
+                                    <constraint firstItem="nIf-ye-EOG" firstAttribute="centerY" secondItem="iZT-nF-SyF" secondAttribute="centerY" id="Ku1-km-gzS"/>
+                                    <constraint firstAttribute="trailing" secondItem="DVy-O0-fbR" secondAttribute="trailing" id="Qcp-IU-YeL"/>
+                                    <constraint firstItem="nIf-ye-EOG" firstAttribute="width" secondItem="iZT-nF-SyF" secondAttribute="width" multiplier="0.9" id="hGV-0U-9EB"/>
+                                    <constraint firstItem="nIf-ye-EOG" firstAttribute="height" secondItem="iZT-nF-SyF" secondAttribute="height" multiplier="0.8" id="kPt-5A-yw3"/>
+                                    <constraint firstItem="DVy-O0-fbR" firstAttribute="leading" secondItem="iZT-nF-SyF" secondAttribute="leading" id="o98-tu-50V"/>
+                                    <constraint firstAttribute="bottom" secondItem="DVy-O0-fbR" secondAttribute="bottom" id="zi7-QP-HtE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="30"/>
-                                <state key="normal" title="Back" backgroundImage="Button">
-                                    <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="e3m-I0-gJU"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAz-SA-B3D" userLabel="ButtonsView">
+                                <rect key="frame" x="83" y="341" width="248" height="448"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdD-6U-qcI">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="81"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="30"/>
+                                        <state key="normal" title="Back" backgroundImage="Button">
+                                            <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="e3m-I0-gJU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoV-Ah-PZQ">
+                                        <rect key="frame" x="0.0" y="181" width="248" height="80.5"/>
+                                        <fontDescription key="fontDescription" name="Belwe-Bold" family="Belwe" pointSize="30"/>
+                                        <state key="normal" title="Lang:" backgroundImage="Button">
+                                            <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="langButtonAction:" destination="Wcw-Ay-uz7" eventType="touchUpInside" id="2hP-hO-OWl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zoV-Ah-PZQ" firstAttribute="centerX" secondItem="DAz-SA-B3D" secondAttribute="centerX" id="71f-I3-abX"/>
+                                    <constraint firstItem="zoV-Ah-PZQ" firstAttribute="width" secondItem="DAz-SA-B3D" secondAttribute="width" id="Aog-wk-OuJ"/>
+                                    <constraint firstItem="VdD-6U-qcI" firstAttribute="width" secondItem="DAz-SA-B3D" secondAttribute="width" id="DeF-bg-2xe"/>
+                                    <constraint firstItem="VdD-6U-qcI" firstAttribute="height" secondItem="DAz-SA-B3D" secondAttribute="height" multiplier="0.18" id="FeT-KV-KJU"/>
+                                    <constraint firstItem="VdD-6U-qcI" firstAttribute="centerX" secondItem="DAz-SA-B3D" secondAttribute="centerX" id="cAP-iI-614"/>
+                                    <constraint firstItem="zoV-Ah-PZQ" firstAttribute="top" secondItem="VdD-6U-qcI" secondAttribute="bottom" constant="100" id="jlR-sb-9oh"/>
+                                    <constraint firstItem="zoV-Ah-PZQ" firstAttribute="height" secondItem="DAz-SA-B3D" secondAttribute="height" multiplier="0.18" id="k8A-nb-w9F"/>
+                                    <constraint firstItem="VdD-6U-qcI" firstAttribute="top" secondItem="DAz-SA-B3D" secondAttribute="top" id="kSz-Og-BJL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iZT-nF-SyF" firstAttribute="width" secondItem="KKy-Kn-cWb" secondAttribute="width" multiplier="0.6" id="1oQ-0K-Zus"/>
                             <constraint firstItem="Dew-gg-8tM" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="3Cf-5M-N8S"/>
-                            <constraint firstItem="zoV-Ah-PZQ" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="44X-23-fRF"/>
-                            <constraint firstItem="VdD-6U-qcI" firstAttribute="leading" secondItem="ema-Nr-d3W" secondAttribute="leading" constant="93" id="4xg-o2-rCf"/>
-                            <constraint firstItem="VdD-6U-qcI" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="AOZ-sh-m9T"/>
+                            <constraint firstItem="iZT-nF-SyF" firstAttribute="top" secondItem="Dew-gg-8tM" secondAttribute="bottom" constant="20" id="80D-UY-XRC"/>
+                            <constraint firstItem="DAz-SA-B3D" firstAttribute="width" secondItem="KKy-Kn-cWb" secondAttribute="width" multiplier="0.6" id="8Eg-6b-g9i"/>
                             <constraint firstItem="Dew-gg-8tM" firstAttribute="width" secondItem="KKy-Kn-cWb" secondAttribute="width" multiplier="0.85" id="E9F-3Z-W41"/>
-                            <constraint firstItem="DVy-O0-fbR" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="HfF-1M-OKc"/>
-                            <constraint firstItem="zoV-Ah-PZQ" firstAttribute="leading" secondItem="ema-Nr-d3W" secondAttribute="leading" constant="93" id="K5k-1N-R6L"/>
+                            <constraint firstItem="DAz-SA-B3D" firstAttribute="top" secondItem="iZT-nF-SyF" secondAttribute="bottom" constant="40" id="HhH-ic-btr"/>
                             <constraint firstItem="Dew-gg-8tM" firstAttribute="top" secondItem="ema-Nr-d3W" secondAttribute="top" constant="40" id="LD1-Zz-FAF"/>
-                            <constraint firstItem="zoV-Ah-PZQ" firstAttribute="top" secondItem="VdD-6U-qcI" secondAttribute="bottom" constant="10" id="Pv4-Cd-izz"/>
-                            <constraint firstItem="ema-Nr-d3W" firstAttribute="trailing" secondItem="VdD-6U-qcI" secondAttribute="trailing" constant="93" id="Tzw-nP-7sU"/>
-                            <constraint firstItem="ema-Nr-d3W" firstAttribute="trailing" secondItem="SJt-Cy-Bkh" secondAttribute="trailing" id="UOQ-OV-XxG"/>
-                            <constraint firstItem="ema-Nr-d3W" firstAttribute="trailing" secondItem="DVy-O0-fbR" secondAttribute="trailing" constant="87" id="VQG-3u-6v7"/>
+                            <constraint firstItem="DAz-SA-B3D" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="UWf-4e-uAb"/>
                             <constraint firstItem="Dew-gg-8tM" firstAttribute="height" secondItem="KKy-Kn-cWb" secondAttribute="height" multiplier="0.12" id="YxJ-KW-0qe"/>
-                            <constraint firstItem="nIf-ye-EOG" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="lqN-Hl-YeS"/>
-                            <constraint firstItem="SJt-Cy-Bkh" firstAttribute="top" secondItem="ema-Nr-d3W" secondAttribute="top" id="me0-ZW-d8h"/>
-                            <constraint firstItem="SJt-Cy-Bkh" firstAttribute="leading" secondItem="ema-Nr-d3W" secondAttribute="leading" id="nve-HY-3Ik"/>
-                            <constraint firstItem="DVy-O0-fbR" firstAttribute="leading" secondItem="ema-Nr-d3W" secondAttribute="leading" constant="87" id="pMm-1F-qgp"/>
-                            <constraint firstItem="VdD-6U-qcI" firstAttribute="top" secondItem="DVy-O0-fbR" secondAttribute="bottom" constant="130" id="qVb-QW-G4c"/>
-                            <constraint firstItem="ema-Nr-d3W" firstAttribute="trailing" secondItem="zoV-Ah-PZQ" secondAttribute="trailing" constant="93" id="uN6-LG-idw"/>
-                            <constraint firstAttribute="bottom" secondItem="SJt-Cy-Bkh" secondAttribute="bottom" id="w0T-if-wlv"/>
+                            <constraint firstItem="iZT-nF-SyF" firstAttribute="height" secondItem="KKy-Kn-cWb" secondAttribute="height" multiplier="0.1" id="aX6-dS-LXg"/>
+                            <constraint firstItem="iZT-nF-SyF" firstAttribute="centerX" secondItem="KKy-Kn-cWb" secondAttribute="centerX" id="blU-YI-Vlj"/>
+                            <constraint firstItem="DAz-SA-B3D" firstAttribute="height" secondItem="KKy-Kn-cWb" secondAttribute="height" multiplier="0.5" id="s40-WE-lyD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ema-Nr-d3W"/>
                     </view>
@@ -516,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2A-gg-xfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="1556"/>
+            <point key="canvasLocation" x="940.57971014492762" y="1555.5803571428571"/>
         </scene>
         <!--Heroes View Controller-->
         <scene sceneID="4K3-nn-ASb">
@@ -736,6 +744,6 @@
         <image name="MenuTexture" width="519" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cWd-Mm-UEN"/>
+        <segue reference="e3m-I0-gJU"/>
     </inferredMetricsTieBreakers>
 </document>
