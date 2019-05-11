@@ -35,8 +35,7 @@ class CardsViewController: UIViewController {
                             //MARK: Парсинг полученной структурки в структурку hsCard
                             let json = try JSONDecoder().decode([hsCard].self, from: data!)
                             DispatchQueue.main.async {
-                                searchCardImage = json.map({ (card: hsCard) in return card.img ?? ""}).first
-                                searchCardGoldImage = json.map({ (card: hsCard) in return card.imgGold ?? ""}).first
+                                searchCard = json.map({ (card: hsCard) in return card}).first ?? hsCard()
                                 //MARK: Переход на одиночную вьюху
                                 let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
                                 guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardViewController") as? SingleCardViewController  else {

@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 //Переменная для хранения ссылки на картинку при запросе карты по имени. Вторая для хранения картинки золотой карты.
-var searchCardImage: String?
-var searchCardGoldImage: String?
+var searchCard: hsCard = hsCard()
 //В переменной хранятся карты при запросе по классу.
 var searchCardsOfClass: [hsCard]? = []
 

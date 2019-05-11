@@ -125,6 +125,7 @@
                         <viewLayoutGuide key="safeArea" id="Vrc-ut-ZC9"/>
                     </view>
                     <connections>
+                        <outlet property="cardNameLabel" destination="og3-q0-9G4" id="tE6-r8-HOW"/>
                         <outlet property="commonImageView" destination="6eK-l0-k1O" id="9d6-Vp-sh1"/>
                         <outlet property="goldImageView" destination="GL8-s3-8oW" id="dDr-OK-bmB"/>
                         <outlet property="singleCardBackButton" destination="XHm-9x-B2K" id="cgz-ka-kYH"/>
