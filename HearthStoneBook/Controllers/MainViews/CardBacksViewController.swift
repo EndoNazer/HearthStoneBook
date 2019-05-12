@@ -2,16 +2,17 @@
 //  CardBacksViewController.swift
 //  HearthStoneBook
 //
-//  Created by Даниил on 19/04/2019.
+//  Created by Даниил on 12/05/2019.
 //  Copyright © 2019 Даниил. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Kingfisher
 
 class CardBacksViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var cardBacksCollectionView: UICollectionView!
     @IBOutlet weak var cardBacksLabel: UILabel!
     @IBOutlet weak var backCardBacksButton: UIButton!
@@ -54,7 +55,8 @@ extension CardBacksViewController: UICollectionViewDataSource, UICollectionViewD
             return
         }
         
-        cardBacksIndex = indexPath.row
+        //cardBacksIndex = indexPath.row
+        destViewController.cardBackIndex = indexPath.row
         destViewController.modalTransitionStyle = .crossDissolve
         present(destViewController, animated: true, completion: nil)
     }

@@ -11,6 +11,7 @@
 		A51BF3A9227321520038CFDB /* CardsByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */; };
 		A51BF3AE227324AC0038CFDB /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */; };
 		A51BF3B0227324B90038CFDB /* CardBackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */; };
+		A56815FF2288340700B73EFE /* CardBacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56815FE2288340700B73EFE /* CardBacksViewController.swift */; };
 		A5C1537222838F0D0064179A /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1537122838F0D0064179A /* Variables.swift */; };
 		A5C1537422838F290064179A /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1537322838F290064179A /* Structures.swift */; };
 		A5C1537622838F880064179A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1537522838F880064179A /* Functions.swift */; };
@@ -21,7 +22,6 @@
 		A5EB4852226896C50035E761 /* Belwe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5EB48512268831C0035E761 /* Belwe.ttf */; };
 		A5EB48542268972D0035E761 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB48532268972D0035E761 /* StartViewController.swift */; };
 		A5EB4856226897C40035E761 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB4855226897C40035E761 /* SettingsViewController.swift */; };
-		A5EB485E226A593E0035E761 /* CardBacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB485D226A593E0035E761 /* CardBacksViewController.swift */; };
 		A5EB4860226A59710035E761 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB485F226A59710035E761 /* CardsViewController.swift */; };
 		A5EB4862226AFC000035E761 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB4861226AFC000035E761 /* HeroesViewController.swift */; };
 		A5EB4865226AFDBB0035E761 /* SingleViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EB4864226AFDBB0035E761 /* SingleViews.storyboard */; };
@@ -36,6 +36,7 @@
 		A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsByClassViewController.swift; sourceTree = "<group>"; };
 		A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackCollectionViewCell.swift; sourceTree = "<group>"; };
+		A56815FE2288340700B73EFE /* CardBacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBacksViewController.swift; sourceTree = "<group>"; };
 		A5C1537122838F0D0064179A /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		A5C1537322838F290064179A /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		A5C1537522838F880064179A /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		A5EB48512268831C0035E761 /* Belwe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Belwe.ttf; path = ../../../../Library/Fonts/Belwe.ttf; sourceTree = "<group>"; };
 		A5EB48532268972D0035E761 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A5EB4855226897C40035E761 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A5EB485D226A593E0035E761 /* CardBacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBacksViewController.swift; sourceTree = "<group>"; };
 		A5EB485F226A59710035E761 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		A5EB4861226AFC000035E761 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		A5EB4864226AFDBB0035E761 /* SingleViews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleViews.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,6 @@
 				36CC12EF6F42D8B977AAD775 /* Pods-HearthStoneBook.debug.xcconfig */,
 				7DF9E1F7B58E21C45B190DBD /* Pods-HearthStoneBook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,9 +110,9 @@
 			children = (
 				A5EB48532268972D0035E761 /* StartViewController.swift */,
 				A5EB4855226897C40035E761 /* SettingsViewController.swift */,
-				A5EB485D226A593E0035E761 /* CardBacksViewController.swift */,
 				A5EB485F226A59710035E761 /* CardsViewController.swift */,
 				A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */,
+				A56815FE2288340700B73EFE /* CardBacksViewController.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -321,11 +320,11 @@
 				A5EB4869226AFE250035E761 /* SingleHeroViewController.swift in Sources */,
 				A5C1537622838F880064179A /* Functions.swift in Sources */,
 				A5EB4862226AFC000035E761 /* HeroesViewController.swift in Sources */,
+				A56815FF2288340700B73EFE /* CardBacksViewController.swift in Sources */,
 				A51BF3AE227324AC0038CFDB /* CardCollectionViewCell.swift in Sources */,
 				A5EB484022687F6A0035E761 /* AppDelegate.swift in Sources */,
 				A51BF3A9227321520038CFDB /* CardsByClassViewController.swift in Sources */,
 				A5EB4867226AFE140035E761 /* SingleCardViewController.swift in Sources */,
-				A5EB485E226A593E0035E761 /* CardBacksViewController.swift in Sources */,
 				A5C1537422838F290064179A /* Structures.swift in Sources */,
 				A5EB4860226A59710035E761 /* CardsViewController.swift in Sources */,
 				A5EB48542268972D0035E761 /* StartViewController.swift in Sources */,
