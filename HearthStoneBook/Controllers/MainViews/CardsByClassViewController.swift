@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CardsByClassViewController: UIViewController {
-
+    
     @IBOutlet weak var cardsByClassCollectionView: UICollectionView!
     @IBOutlet weak var cardsByClassLabel: UILabel!
     @IBOutlet weak var cardsByClassBackButton: UIButton!
@@ -25,17 +26,17 @@ class CardsByClassViewController: UIViewController {
         cardsByClassCollectionView.delegate = self
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension CardsByClassViewController: UICollectionViewDataSource, UICollectionViewDelegate{
@@ -50,12 +51,18 @@ extension CardsByClassViewController: UICollectionViewDataSource, UICollectionVi
         if let cell = cardsByClassCollectionView.dequeueReusableCell(withReuseIdentifier: "CardsCell", for: indexPath) as? CardCollectionViewCell{
             
             if let image = searchCardsOfClass?[indexPath.row].img{
-                cell.cardCollectionViewCellImage.downloaded(from: image)
+                let url = URL(string: image)
+                cell.cardCollectionViewCellImage.kf.indicatorType = .activity
+                cell.cardCollectionViewCellImage.kf.setImage(with: url, options: [.onFailureImage(UIImage(named: "error.png"))]){result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(_): break
+                    }
+                }
             }
-            
             return cell
         }
         return UICollectionViewCell()
     }
-    
 }

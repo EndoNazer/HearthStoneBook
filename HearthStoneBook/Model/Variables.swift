@@ -18,6 +18,8 @@ var searchCardsOfClass: [hsCard]? = []
 var cardBacks: [hsCardBack]? = []
 var cardBacksIndex: Int?
 
+var cardSets: [String] = ["Basic", "Classic", "Credits", "Naxxramas", "Debug", "Goblins vs Gnomes", "Missions", "Promotion", "Reward", "System", "Blackrock Mountain", "Tavern Brawl", "The Grand Tournament"]
+
 //Хедеры для запроса к API
 var hsHeaders:[String:String] = [
     "X-RapidAPI-Host": "omgvamp-hearthstone-v1.p.rapidapi.com",

@@ -78,7 +78,10 @@ class CardsViewController: UIViewController {
                             let json = try JSONDecoder().decode([hsCard].self, from: data!)
                             DispatchQueue.main.async {
                                 //MARK: отбор карт с картинками. То что без картинок отсеить. В идеале модернизировать как-то, чтобы отображать те карты, у которых нет картинок.
-                                searchCardsOfClass = checkCardsWOImage(sourceArray: json)
+                                let cardsWOImage = checkCardsWOImage(sourceArray: json)
+                                searchCardsOfClass = deleteCardHeroType(sourceArray: cardsWOImage)
+                                //let cardsOfTheNecessaryTypes = deleteCardHeroType(sourceArray: cardsWOImage)
+                                //searchCardsOfClass = deleteCardMissingType(sourceArray: cardsOfTheNecessaryTypes)
                                 //MARK: Переход на вьюху с полученными картонками(картами)
                                 let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                                 guard let destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardsByClassViewController") as? CardsByClassViewController  else {

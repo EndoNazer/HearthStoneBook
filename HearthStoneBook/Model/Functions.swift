@@ -29,6 +29,28 @@ func checkCardsWOImage(sourceArray: [hsCardBack]) -> [hsCardBack]{
     return array
 }
 
+func deleteCardHeroType(sourceArray: [hsCard]) -> [hsCard]{
+    var array: [hsCard] = []
+    for someCard in sourceArray{
+        if someCard.type != "Hero"{
+            array.append(someCard)
+        }
+    }
+    return array
+}
+
+func deleteCardMissingType(sourceArray: [hsCard]) -> [hsCard]{
+    var array: [hsCard] = []
+    for someCard in sourceArray{
+        if cardSets.contains(someCard.cardSet ?? ""){
+            array.append(someCard)
+        }
+    }
+    return array
+}
+
+
+
 //MARK: Создание запроса к API
 func setRequest(URL: URL) -> URLRequest{
     //TODO: При неверном имени карты выдает ошибку, так как nil. Исправить!
