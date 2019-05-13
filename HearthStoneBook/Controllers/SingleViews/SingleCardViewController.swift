@@ -33,6 +33,10 @@ class SingleCardViewController: UIViewController {
         if let image = searchCard.img, let goldImage = searchCard.imgGold, let nameCard = searchCard.name{
             let urlCommon = URL(string: image)
             let urlGold = URL(string: goldImage)
+            
+            commonImageView.kf.indicatorType = .activity
+            goldImageView.kf.indicatorType = .activity
+            
             commonImageView.kf.setImage(with: urlCommon)
             goldImageView.kf.setImage(with: urlGold)
             cardNameLabel.text = nameCard
