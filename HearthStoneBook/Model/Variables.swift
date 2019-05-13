@@ -13,6 +13,8 @@ import UIKit
 var searchCard: hsCard = hsCard()
 //В переменной хранятся карты при запросе по классу.
 var searchCardsOfClass: [hsCard]? = []
+//Выбранная карта класса
+var selectedCardOfClass: hsCard = hsCard()
 
 //Массив найденых по запросу рубашек
 var cardBacks: [hsCardBack]? = []

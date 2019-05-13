@@ -67,12 +67,14 @@ extension CardsByClassViewController: UICollectionViewDataSource, UICollectionVi
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
-        guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardViewController") as? SingleCardBackViewController else{
+        guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardOfClassViewController") as? SingleCardOfClassViewController else{
             return
         }
         
+        selectedCardOfClass = searchCardsOfClass?[indexPath.row] ?? hsCard()
+        
         //cardBacksIndex = indexPath.row
-        destViewController.cardBackIndex = indexPath.row
+        destViewController.cardIndex = indexPath.row
         destViewController.modalTransitionStyle = .crossDissolve
         present(destViewController, animated: true, completion: nil)
     }
