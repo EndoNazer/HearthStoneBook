@@ -46,6 +46,10 @@ class CardsViewController: UIViewController {
                             }
                         } catch {
                             print(error)
+                            DispatchQueue.main.sync {
+                                self.nameCardsBox.text = nil
+                                self.nameCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                            }
                         }
                     } else {
                         print(error ?? "Undefined error")
@@ -68,7 +72,7 @@ class CardsViewController: UIViewController {
                 let addPart = "cards/classes/\(classCard)"
                 let classCardsURL = URL(string: hsURLString + addPart)
                 
-                //TODO: При неверном имени карты выдает ошибку, так как nil. Исправить!
+                //TODO: При вводе на русском выдает nil
                 let hsRequest = setRequest(URL: classCardsURL!)
                 
                 let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
@@ -92,14 +96,17 @@ class CardsViewController: UIViewController {
                             }
                         } catch {
                             print(error)
+                            DispatchQueue.main.sync {
+                                self.classCardsBox.text = nil
+                                self.classCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct class", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                            }
                         }
                     } else {
                         print(error ?? "Undefined error")
                     }
-                }
-                )
+                })
                 request.resume()
-                
+
             }else{
                 classCardsBox.text = nil
                 classCardsBox.placeholder = "Please enter the class"
