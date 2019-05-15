@@ -20,6 +20,7 @@ var selectedCardOfClass: hsCard = hsCard()
 var cardBacks: [hsCardBack]? = []
 var cardBacksIndex: Int?
 
+//Массив возможных дополнений игры
 var cardSets: [String] = ["Basic", "Classic", "Credits", "Naxxramas", "Debug", "Goblins vs Gnomes", "Missions", "Promotion", "Reward", "System", "Blackrock Mountain", "Tavern Brawl", "The Grand Tournament"]
 
 //Хедеры для запроса к API

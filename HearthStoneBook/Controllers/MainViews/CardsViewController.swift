@@ -9,7 +9,6 @@
 import UIKit
 
 class CardsViewController: UIViewController {
-    
     @IBOutlet weak var backCardsButton: UIButton!
     @IBOutlet weak var nameCardsBox: UITextField!
     @IBOutlet weak var classCardsBox: UITextField!
@@ -24,8 +23,9 @@ class CardsViewController: UIViewController {
                 let nameWOSpaces = name.replacingOccurrences(of: " ", with: "%20")
 
                 //MARK: Формирую строку запроса на основе введенного названия карты
-                let addPart = "cards/\(nameWOSpaces)"
-                let nameCardsURL = URL(string: hsURLString + addPart)
+                let formStr = "cards/\(nameWOSpaces)"
+                let addPart = formStr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                let nameCardsURL = URL(string: hsURLString + addPart!)
 
                 let hsRequest = setRequest(URL: nameCardsURL!)
                 
@@ -69,8 +69,9 @@ class CardsViewController: UIViewController {
         if let classCard = classCardsBox.text{
             if classCard != ""{
                 //MARK: Формирую строку запроса на основе введенного названия карты
-                let addPart = "cards/classes/\(classCard)"
-                let classCardsURL = URL(string: hsURLString + addPart)
+                let formStr = "cards/classes/\(classCard)"
+                let addPart = formStr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                let classCardsURL = URL(string: hsURLString + addPart!)
                 
                 //TODO: При вводе на русском выдает nil
                 let hsRequest = setRequest(URL: classCardsURL!)
