@@ -73,7 +73,6 @@ extension CardsByClassViewController: UICollectionViewDataSource, UICollectionVi
         
         selectedCardOfClass = searchCardsOfClass?[indexPath.row] ?? hsCard()
         
-        //cardBacksIndex = indexPath.row
         destViewController.cardIndex = indexPath.row
         destViewController.modalTransitionStyle = .crossDissolve
         present(destViewController, animated: true, completion: nil)

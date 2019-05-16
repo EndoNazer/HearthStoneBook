@@ -40,21 +40,26 @@ extension CardBacksViewController: UICollectionViewDataSource, UICollectionViewD
             
             if let image = cardBacks?[indexPath.row].img{
                 let url = URL(string: image)
-                cell.cardBackCollectionViewCellImage.kf.setImage(with: url)
+                cell.cardBackCollectionViewCellImage.kf.indicatorType = .activity
+                cell.cardBackCollectionViewCellImage.kf.setImage(with: url, options: [.onFailureImage(UIImage(named: "error.png"))]){result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(_): break
+                    }
+                }
             }
-            print("\(indexPath.row) \(Unmanaged.passUnretained(cell).toOpaque())")
+            //print("\(indexPath.row) \(Unmanaged.passUnretained(cell).toOpaque())")
             return cell
         }
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print(indexPath.row)
         let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
         guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardBackViewController") as? SingleCardBackViewController else{
             return
         }
         
-        //cardBacksIndex = indexPath.row
         destViewController.cardBackIndex = indexPath.row
         destViewController.modalTransitionStyle = .crossDissolve
         self.present(destViewController, animated: true, completion: nil)

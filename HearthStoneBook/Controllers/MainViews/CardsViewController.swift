@@ -72,8 +72,7 @@ class CardsViewController: UIViewController {
                 let formStr = "cards/classes/\(classCard)"
                 let addPart = formStr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
                 let classCardsURL = URL(string: hsURLString + addPart!)
-                
-                //TODO: При вводе на русском выдает nil
+                //MARK: Создание запроса
                 let hsRequest = setRequest(URL: classCardsURL!)
                 
                 let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
@@ -82,9 +81,9 @@ class CardsViewController: UIViewController {
                             //MARK: Парсинг полученной структурки в структурку hsCard
                             let json = try JSONDecoder().decode([hsCard].self, from: data!)
                             DispatchQueue.main.async {
-                                //MARK: отбор карт с картинками. То что без картинок отсеить. В идеале модернизировать как-то, чтобы отображать те карты, у которых нет картинок.
+                                //MARK: Отбор карт с картинками. То что без картинок отсеить. В идеале модернизировать как-то, чтобы отображать те карты, у которых нет картинок.
                                 let cardsWOImage = checkCardsWOImage(sourceArray: json)
-                                //Удаление отсутствующих дополнений
+                                //MARK: Удаление отсутствующих дополнений
                                 let cardsOfTheNecessaryTypes = deleteCardHeroType(sourceArray: cardsWOImage)
                                 searchCardsOfClass = deleteCardMissingType(sourceArray: cardsOfTheNecessaryTypes)
                                 //MARK: Переход на вьюху с полученными картонками(картами)
