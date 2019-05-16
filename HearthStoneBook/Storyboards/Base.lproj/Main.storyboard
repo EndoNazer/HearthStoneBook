@@ -220,6 +220,7 @@
                                     <color key="titleColor" red="0.3294117647" green="0.23137254900000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonAction:" destination="iLm-up-eRW" eventType="touchUpInside" id="SF1-JF-mnq"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="eBz-D1-b8E"/>
                                 </connections>
                             </button>
@@ -273,9 +274,9 @@
                         <viewLayoutGuide key="safeArea" id="KbW-xi-dmZ"/>
                     </view>
                     <connections>
-                        <outlet property="backCardBacksButton" destination="dAm-ln-WwS" id="Q9I-on-77M"/>
-                        <outlet property="cardBacksCollectionView" destination="q5z-SA-OCj" id="Aze-bs-a96"/>
-                        <outlet property="cardBacksLabel" destination="Omm-t3-jk5" id="o7w-Ev-Neb"/>
+                        <outlet property="backCardBacksButton" destination="dAm-ln-WwS" id="oSd-Yd-TKT"/>
+                        <outlet property="cardBacksCollectionView" destination="q5z-SA-OCj" id="eOr-hu-19Z"/>
+                        <outlet property="cardBacksLabel" destination="Omm-t3-jk5" id="2xE-TV-ohX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMb-Rh-KJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -736,6 +737,6 @@
         <image name="MenuTexture" width="519" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yua-21-adR"/>
+        <segue reference="eBz-D1-b8E"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,11 +16,11 @@ class CardBacksViewController: UIViewController {
     @IBOutlet weak var cardBacksCollectionView: UICollectionView!
     @IBOutlet weak var cardBacksLabel: UILabel!
     @IBOutlet weak var backCardBacksButton: UIButton!
-    
+    @IBAction func backButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cardBacksCollectionView.isPrefetchingEnabled = false
-        //cardBacksCollectionView.prefetchDataSource = cardBacks as? UICollectionViewDataSourcePrefetching
         
         cardBacksCollectionView.dataSource = self
         cardBacksCollectionView.delegate = self
@@ -39,9 +39,8 @@ extension CardBacksViewController: UICollectionViewDataSource, UICollectionViewD
         if let cell = cardBacksCollectionView.dequeueReusableCell(withReuseIdentifier: "CardBacksCell", for: indexPath) as? CardBackCollectionViewCell{
             
             if let image = cardBacks?[indexPath.row].img{
-                cell.cardBackCollectionViewCellImage.downloaded(from: image)
-                //let url = URL(string: image)
-                //cell.cardBackCollectionViewCellImage.kf.setImage(with: url)
+                let url = URL(string: image)
+                cell.cardBackCollectionViewCellImage.kf.setImage(with: url)
             }
             print("\(indexPath.row) \(Unmanaged.passUnretained(cell).toOpaque())")
             return cell
@@ -58,6 +57,6 @@ extension CardBacksViewController: UICollectionViewDataSource, UICollectionViewD
         //cardBacksIndex = indexPath.row
         destViewController.cardBackIndex = indexPath.row
         destViewController.modalTransitionStyle = .crossDissolve
-        present(destViewController, animated: true, completion: nil)
+        self.present(destViewController, animated: true, completion: nil)
     }
 }
