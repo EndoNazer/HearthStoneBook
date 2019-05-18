@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CardsViewController: UIViewController {
     @IBOutlet weak var backCardsButton: UIButton!
@@ -20,43 +21,85 @@ class CardsViewController: UIViewController {
     @IBAction func nameCardsSearchAction(_ sender: Any) {
         if let name = nameCardsBox.text{
             if name != ""{
-                let nameWOSpaces = name.replacingOccurrences(of: " ", with: "%20")
-
-                //MARK: Формирую строку запроса на основе введенного названия карты
-                let formStr = "cards/\(nameWOSpaces)"
-                let addPart = formStr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-                let nameCardsURL = URL(string: hsURLString + addPart!)
-
-                let hsRequest = setRequest(URL: nameCardsURL!)
                 
-                let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
-                    if error == nil {
-                        do {
-                            //MARK: Парсинг полученной структурки в структурку hsCard
-                            let json = try JSONDecoder().decode([hsCard].self, from: data!)
-                            DispatchQueue.main.async {
-                                searchCard = json.map({ (card: hsCard) in return card}).first ?? hsCard()
-                                //MARK: Переход на одиночную вьюху
-                                let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
-                                guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardViewController") as? SingleCardViewController  else {
-                                    return
+                let cardCheck = SingleCard()
+                cardCheck.name = name
+                do{
+                    let realm = try Realm()
+                    if let check = realm.object(ofType: SingleCard.self, forPrimaryKey: cardCheck.name){
+                        //MARK: Переход на одиночную вьюху
+                        let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
+                        guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardViewController") as? SingleCardViewController  else {
+                            return
+                        }
+                        destViewController.img = String(data: check.img!, encoding: .utf8)!
+                        destViewController.imgGold = String(data: check.imgGold!, encoding: .utf8)!
+                        destViewController.name = check.name
+                        destViewController.modalTransitionStyle = .crossDissolve
+                        self.present(destViewController, animated: true, completion: nil)
+                    }else{
+                        let nameWOSpaces = name.replacingOccurrences(of: " ", with: "%20")
+                        
+                        //MARK: Формирую строку запроса на основе введенного названия карты
+                        let formStr = "cards/\(nameWOSpaces)"
+                        let addPart = formStr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                        let nameCardsURL = URL(string: hsURLString + addPart!)
+                        
+                        let hsRequest = setRequest(URL: nameCardsURL!)
+                        
+                        let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
+                            if error == nil {
+                                do {
+                                    //MARK: Парсинг полученной структурки в структурку hsCard
+                                    let json = try JSONDecoder().decode([hsCard].self, from: data!)
+                                    DispatchQueue.main.async {
+                                        searchCard = json.map({ (card: hsCard) in return card}).first ?? hsCard()
+                                        
+                                        //MARK: Создание объекта Realm и переход на новую View
+                                        if  let cardName = searchCard.name, let imgStr = searchCard.img, let imgGoldStr = searchCard.imgGold{
+                                            if let imgData = imgStr.data(using: .utf8), let imgGoldData = imgGoldStr.data(using: .utf8){
+                                                let cardObj = SingleCard()
+                                                cardObj.name = cardName
+                                                cardObj.img = imgData
+                                                cardObj.imgGold = imgGoldData
+                                                
+                                                let realm = try! Realm()
+                                                try! realm.write {
+                                                    realm.add(cardObj)
+                                                }
+                                            }
+                                            //MARK: Переход на одиночную вьюху
+                                            let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
+                                            guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardViewController") as? SingleCardViewController  else {
+                                                return
+                                            }
+                                            destViewController.img = imgStr
+                                            destViewController.imgGold = imgGoldStr
+                                            destViewController.name = cardName
+                                            destViewController.modalTransitionStyle = .crossDissolve
+                                            self.present(destViewController, animated: true, completion: nil)
+                                        }
+                                    }
+                                } catch {
+                                    print(error)
+                                    DispatchQueue.main.sync {
+                                        self.nameCardsBox.text = nil
+                                        self.nameCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                                    }
                                 }
-                                destViewController.modalTransitionStyle = .crossDissolve
-                                self.present(destViewController, animated: true, completion: nil)
-                            }
-                        } catch {
-                            print(error)
-                            DispatchQueue.main.sync {
-                                self.nameCardsBox.text = nil
-                                self.nameCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                            } else {
+                                print(error ?? "Undefined error")
                             }
                         }
-                    } else {
-                        print(error ?? "Undefined error")
+                        )
+                        request.resume()
                     }
-                    }
-                )
-                request.resume()
+                }catch let error as NSError{
+                    print(error)
+                }
+                
+                
+                
             }else{
                 //MARK: Если пользователь ничего не ввел в TextField
                 nameCardsBox.text = nil
@@ -106,7 +149,7 @@ class CardsViewController: UIViewController {
                     }
                 })
                 request.resume()
-
+                
             }else{
                 classCardsBox.text = nil
                 classCardsBox.placeholder = "Please enter the class"

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class StartViewController: UIViewController {
     
@@ -57,6 +58,11 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         //cardsButton.titleLabel?.adjustsFontSizeToFitWidth = true
         //menuLabel.sizeToFit()
+        
+        //let card = SingleCard()
+        let realm = try! Realm()
+        let result = realm.objects(SingleCard.self)
+        print(result)
     }
     
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		65AE3921DF1934174B6EB489 /* Pods_HearthStoneBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA852A1BEC649D6986C710B5 /* Pods_HearthStoneBook.framework */; };
 		A506CB5C228D65CD008A2AC6 /* CardBacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506CB5B228D65CD008A2AC6 /* CardBacksViewController.swift */; };
+		A506CB5E228D7D02008A2AC6 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506CB5D228D7D02008A2AC6 /* Objects.swift */; };
 		A51BF3A9227321520038CFDB /* CardsByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */; };
 		A51BF3AE227324AC0038CFDB /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */; };
 		A51BF3B0227324B90038CFDB /* CardBackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */; };
@@ -35,6 +36,7 @@
 		36CC12EF6F42D8B977AAD775 /* Pods-HearthStoneBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthStoneBook.debug.xcconfig"; path = "Target Support Files/Pods-HearthStoneBook/Pods-HearthStoneBook.debug.xcconfig"; sourceTree = "<group>"; };
 		7DF9E1F7B58E21C45B190DBD /* Pods-HearthStoneBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthStoneBook.release.xcconfig"; path = "Target Support Files/Pods-HearthStoneBook/Pods-HearthStoneBook.release.xcconfig"; sourceTree = "<group>"; };
 		A506CB5B228D65CD008A2AC6 /* CardBacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBacksViewController.swift; sourceTree = "<group>"; };
+		A506CB5D228D7D02008A2AC6 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		A51BF3A8227321520038CFDB /* CardsByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsByClassViewController.swift; sourceTree = "<group>"; };
 		A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				A5C1537122838F0D0064179A /* Variables.swift */,
 				A5C1537322838F290064179A /* Structures.swift */,
 				A5C1537522838F880064179A /* Functions.swift */,
+				A506CB5D228D7D02008A2AC6 /* Objects.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				A5C1537222838F0D0064179A /* Variables.swift in Sources */,
 				A5EB4869226AFE250035E761 /* SingleHeroViewController.swift in Sources */,
 				A5C1537622838F880064179A /* Functions.swift in Sources */,
+				A506CB5E228D7D02008A2AC6 /* Objects.swift in Sources */,
 				A5EB4862226AFC000035E761 /* HeroesViewController.swift in Sources */,
 				A506CB5C228D65CD008A2AC6 /* CardBacksViewController.swift in Sources */,
 				A568160122895DF300B73EFE /* SingleCardOfClassViewController.swift in Sources */,
