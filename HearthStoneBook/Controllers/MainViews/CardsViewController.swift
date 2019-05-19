@@ -91,8 +91,7 @@ class CardsViewController: UIViewController {
                             } else {
                                 print(error ?? "Undefined error")
                             }
-                        }
-                        )
+                        })
                         request.resume()
                     }
                 }catch let error as NSError{
@@ -116,12 +115,15 @@ class CardsViewController: UIViewController {
                 //MARK: Создание запроса
                 let hsRequest = setRequest(URL: classCardsURL!)
                 
+                blurAndActivityEffectAdd(viewController: self)
+                
                 let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
                     if error == nil {
                         do {
                             //MARK: Парсинг полученной структурки в структурку hsCard
                             let json = try JSONDecoder().decode([hsCard].self, from: data!)
                             DispatchQueue.main.async {
+                                blurAndActivityEffectRemove(viewController: self)
                                 //MARK: Отбор карт с картинками. То что без картинок отсеить.
                                 let cardsWOImage = checkCardsWOImage(sourceArray: json)
                                 //MARK: Удаление отсутствующих дополнений
@@ -137,6 +139,7 @@ class CardsViewController: UIViewController {
                             }
                         } catch {
                             print(error)
+                            blurAndActivityEffectRemove(viewController: self)
                             DispatchQueue.main.sync {
                                 self.classCardsBox.text = nil
                                 self.classCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct class", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
@@ -144,6 +147,7 @@ class CardsViewController: UIViewController {
                         }
                     } else {
                         print(error ?? "Undefined error")
+                        blurAndActivityEffectRemove(viewController: self)
                     }
                 })
                 request.resume()

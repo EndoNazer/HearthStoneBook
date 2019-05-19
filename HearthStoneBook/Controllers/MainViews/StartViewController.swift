@@ -54,9 +54,11 @@ class StartViewController: UIViewController {
                         }
                     } catch {
                         print(error)
+                        blurAndActivityEffectRemove(viewController: self)
                     }
                 } else {
                     print(error ?? "Undefined error")
+                    blurAndActivityEffectRemove(viewController: self)
                 }
             })
             myResponse.resume()
