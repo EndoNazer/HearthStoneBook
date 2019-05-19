@@ -28,52 +28,55 @@ class StartViewController: UIViewController {
         
         let hsRequest = setRequest(URL: cardBacksURL!)
         
-        let myResponse = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
-            if error == nil {
-                do {
-                    //MARK: Парсинг полученной структурки в структурку hsCardsBack
-                    let json = try JSONDecoder().decode([hsCardBack].self, from: data!)
-                    DispatchQueue.main.async {
-                        cardBacks = checkCardsWOImage(sourceArray: json)
-                        
-                        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                        guard let destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardBacksViewController") as? CardBacksViewController  else {
-                            return
+        let queue = DispatchQueue.global(qos: .utility)
+        
+        //MARK: Добавление размытия и индикатора загрузки
+        blurAndActivityEffectAdd(viewController: self)
+        
+        queue.async {
+            let myResponse = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
+                if error == nil {
+                    do {
+                        //MARK: Парсинг полученной структурки в структурку hsCardsBack
+                        let json = try JSONDecoder().decode([hsCardBack].self, from: data!)
+                        DispatchQueue.main.async {
+                            //MARK: Удаление размытия и индикатора загрузки
+                            blurAndActivityEffectRemove(viewController: self)
+                            
+                            cardBacks = checkCardsWOImage(sourceArray: json)
+                            
+                            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                            guard let destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardBacksViewController") as? CardBacksViewController  else {
+                                return
+                            }
+                            destViewController.modalTransitionStyle = .crossDissolve
+                            self.present(destViewController, animated: true, completion: nil)
                         }
-                        destViewController.modalTransitionStyle = .crossDissolve
-                        self.present(destViewController, animated: true, completion: nil)
+                    } catch {
+                        print(error)
                     }
-                } catch {
-                    print(error)
+                } else {
+                    print(error ?? "Undefined error")
                 }
-            } else {
-                print(error ?? "Undefined error")
-            }
+            })
+            myResponse.resume()
         }
-        )
-        myResponse.resume()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cardsButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        //menuLabel.sizeToFit()
         
-        //let card = SingleCard()
-        let realm = try! Realm()
-        let result = realm.objects(SingleCard.self)
-        print(result)
     }
     
     
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

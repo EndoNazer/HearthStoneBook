@@ -88,6 +88,31 @@ func displayCardBackImages(backImg: String, name: String, backImgView: UIImageVi
     nameLabel.text = name
 }
 
+//MARK: Добавление блюра и индикатора загрузки на вью при загрузке данных
+func blurAndActivityEffectAdd(viewController: UIViewController){
+    
+    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    blurEffectView.tag = 100
+    blurEffectView.frame = viewController.view.bounds
+    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    
+    let activityView = UIActivityIndicatorView(frame: blurEffectView.frame)
+    activityView.tag = 101
+    activityView.isHidden = false
+    activityView.startAnimating()
+    
+    viewController.view.addSubview(blurEffectView)
+    viewController.view.addSubview(activityView)
+}
+//MARK: Удаление блюра и индикатора загрузки на вью при загрузке данных
+func blurAndActivityEffectRemove(viewController: UIViewController){
+    if let blurEffectView = viewController.view.viewWithTag(100),
+        let activityIndicator = viewController.view.viewWithTag(101){
+            blurEffectView.removeFromSuperview()
+            activityIndicator.removeFromSuperview()
+    }
+}
+
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
         contentMode = mode

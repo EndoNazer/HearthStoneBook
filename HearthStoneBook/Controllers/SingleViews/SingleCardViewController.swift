@@ -11,10 +11,9 @@ import Kingfisher
 
 class SingleCardViewController: UIViewController {
     
-    var img = ""
-    var imgGold = ""
-    var name = ""
-    
+    var img: String = ""
+    var imgGold: String = ""
+    var name: String = ""
     
     @IBOutlet weak var goldImageView: UIImageView!
     @IBOutlet weak var commonImageView: UIImageView!
@@ -30,7 +29,6 @@ class SingleCardViewController: UIViewController {
         
         //MARK: Отображение картинок
         displayCardImages(img: self.img, imgGold: self.imgGold, name: self.name, commonImgView: commonImageView, goldImgView: goldImageView, nameLabel: cardNameLabel)
-        
     }
     
     /*
