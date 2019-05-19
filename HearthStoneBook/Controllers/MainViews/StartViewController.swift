@@ -54,10 +54,12 @@ class StartViewController: UIViewController {
                         }
                     } catch {
                         print(error)
+                        //MARK: Удаление размытия и индикатора
                         blurAndActivityEffectRemove(viewController: self)
                     }
                 } else {
                     print(error ?? "Undefined error")
+                    //MARK: Удаление размытия и индикатора
                     blurAndActivityEffectRemove(viewController: self)
                 }
             })

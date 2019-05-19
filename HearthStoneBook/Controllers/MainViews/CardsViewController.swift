@@ -125,7 +125,7 @@ class CardsViewController: UIViewController {
                 let classCardsURL = URL(string: hsURLString + addPart!)
                 //MARK: Создание запроса
                 let hsRequest = setRequest(URL: classCardsURL!)
-                
+                //MARK: Добавление размытия и индикатора
                 blurAndActivityEffectAdd(viewController: self)
                 
                 let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
@@ -134,6 +134,7 @@ class CardsViewController: UIViewController {
                             //MARK: Парсинг полученной структурки в структурку hsCard
                             let json = try JSONDecoder().decode([hsCard].self, from: data!)
                             DispatchQueue.main.async {
+                                //MARK: Удаление размытия и индикатора
                                 blurAndActivityEffectRemove(viewController: self)
                                 //MARK: Отбор карт с картинками. То что без картинок отсеить.
                                 let cardsWOImage = checkCardsWOImage(sourceArray: json)
@@ -150,19 +151,21 @@ class CardsViewController: UIViewController {
                             }
                         } catch {
                             print(error)
-                            blurAndActivityEffectRemove(viewController: self)
                             DispatchQueue.main.sync {
+                                //MARK: Удаление размытия и индикатора
+                                blurAndActivityEffectRemove(viewController: self)
+                                
                                 self.classCardsBox.text = nil
                                 self.classCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct class", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
                             }
                         }
                     } else {
                         print(error ?? "Undefined error")
+                        //MARK: Удаление размытия и индикатора
                         blurAndActivityEffectRemove(viewController: self)
                     }
                 })
                 request.resume()
-                
             }else{
                 classCardsBox.text = nil
                 classCardsBox.placeholder = "Please enter the class"

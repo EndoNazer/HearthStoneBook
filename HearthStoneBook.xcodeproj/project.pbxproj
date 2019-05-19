@@ -41,7 +41,6 @@
 		A51BF3AD227324AC0038CFDB /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		A51BF3AF227324B90038CFDB /* CardBackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackCollectionViewCell.swift; sourceTree = "<group>"; };
 		A568160022895DF300B73EFE /* SingleCardOfClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardOfClassViewController.swift; sourceTree = "<group>"; };
-		A5A9D79F2291D42600D08E10 /* Belwe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Belwe.ttf; sourceTree = "<group>"; };
 		A5C1537122838F0D0064179A /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		A5C1537322838F290064179A /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		A5C1537522838F880064179A /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -123,14 +122,6 @@
 			path = MainViews;
 			sourceTree = "<group>";
 		};
-		A54D4B0C2291D3A800885DAB /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				A5A9D79F2291D42600D08E10 /* Belwe.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		A587707D227799FF00DA8DFE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +166,6 @@
 				A5EB486C226AFE480035E761 /* Storyboards */,
 				A5EB4863226AFD7A0035E761 /* Controllers */,
 				A5C1537022838EE10064179A /* Model */,
-				A54D4B0C2291D3A800885DAB /* Fonts */,
 				A5EB483F22687F6A0035E761 /* AppDelegate.swift */,
 				A5EB484622687F6B0035E761 /* Assets.xcassets */,
 				A5EB484B22687F6B0035E761 /* Info.plist */,
