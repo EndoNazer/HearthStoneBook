@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Kingfisher
+import RealmSwift
 
 //MARK: Функции для проверки на наличие картинки
 func checkCardsWOImage(sourceArray: [hsCard]) -> [hsCard]{
@@ -63,32 +65,27 @@ func setRequest(URL: URL) -> URLRequest{
     return hsRequest
 }
 
-func cardBacksLoad(request: URLRequest){
-    let myResponse = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
-        if error == nil {
-            do {
-                //MARK: Парсинг полученной структурки в структурку hsCardsBack
-                let json = try JSONDecoder().decode([hsCardBack].self, from: data!)
-                DispatchQueue.main.async {
-                    cardBacks = checkCardsWOImage(sourceArray: json)
-                    
-                    //MARK: Переход на одиночную вьюху
-                    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                    guard let destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardBacksViewController") as? CardBacksViewController  else {
-                        return
-                    }
-                    destViewController.modalTransitionStyle = .crossDissolve
-                    StartViewController().present(destViewController, animated: true, completion: nil)
-                }
-            } catch {
-                print(error)
-            }
-        } else {
-            print(error ?? "Undefined error")
-        }
-    }
-    )
-    myResponse.resume()
+//func searchClass(class: String, mainClass: ){
+//
+//}
+
+//MARK: Функция для отображения картинок и имени карты в SingleView
+func displayCardImages(img: String, imgGold: String, name: String, commonImgView: UIImageView, goldImgView: UIImageView, nameLabel: UILabel){
+    let urlCommon = URL(string: img)
+    let urlGold = URL(string: imgGold)
+    
+    commonImgView.kf.indicatorType = .activity
+    goldImgView.kf.indicatorType = .activity
+    
+    commonImgView.kf.setImage(with: urlCommon, options: [.onFailureImage(UIImage(named: "error.png"))])
+    goldImgView.kf.setImage(with: urlGold, options: [.onFailureImage(UIImage(named: "error.png"))])
+    nameLabel.text = name
+}
+//MARK: Функция для отображения картинки и имени рубашки в SingleView
+func displayCardBackImages(backImg: String, name: String, backImgView: UIImageView, nameLabel: UILabel){
+    let url = URL(string: backImg)
+    backImgView.kf.setImage(with: url, options: [.onFailureImage(UIImage(named: "error.png"))])
+    nameLabel.text = name
 }
 
 extension UIImageView {

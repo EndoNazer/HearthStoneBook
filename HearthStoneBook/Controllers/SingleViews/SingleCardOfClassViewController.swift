@@ -33,15 +33,7 @@ class SingleCardOfClassViewController: UIViewController {
         
         //MARK: Отображение картинок
         if let image = selectedCardOfClass.img, let goldImage = selectedCardOfClass.imgGold, let nameCard = selectedCardOfClass.name{
-            let urlCommon = URL(string: image)
-            let urlGold = URL(string: goldImage)
-            
-            commonImageView.kf.indicatorType = .activity
-            goldImageView.kf.indicatorType = .activity
-            
-            commonImageView.kf.setImage(with: urlCommon, options: [.onFailureImage(UIImage(named: "error.png"))])
-            goldImageView.kf.setImage(with: urlGold, options: [.onFailureImage(UIImage(named: "error.png"))])
-            cardNameLabel.text = nameCard
+            displayCardImages(img: image, imgGold: goldImage, name: nameCard, commonImgView: commonImageView, goldImgView: goldImageView, nameLabel: cardNameLabel)
         }
         
     }

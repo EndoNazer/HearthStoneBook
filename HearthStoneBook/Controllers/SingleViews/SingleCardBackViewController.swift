@@ -11,7 +11,7 @@ import Kingfisher
 
 class SingleCardBackViewController: UIViewController {
 
-    var cardBackIndex: Int = 0
+    var cardBack: hsCardBack = hsCardBack()
     
     @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var backLabel: UILabel!
@@ -33,14 +33,9 @@ class SingleCardBackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Делаю небезопасно, так как сюда зайдет программма только если что-то пользователь выберет и индекс точно будет известен
-        //TODO: Когда буду работать через бд, то картинку брать из бд, а не грузить заново
-        if let image = cardBacks?[cardBackIndex].img{
-            //backImageView.downloaded(from: image)
-            let url = URL(string: image)
-            backImageView.kf.setImage(with: url)
+        if let image = cardBack.img, let name = cardBack.name{
+            displayCardBackImages(backImg: image, name: name, backImgView: backImageView, nameLabel: nameLabel)
         }
-        nameLabel.text = cardBacks?[cardBackIndex].name
     }
     
     /*

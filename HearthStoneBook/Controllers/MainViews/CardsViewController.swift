@@ -21,7 +21,7 @@ class CardsViewController: UIViewController {
     @IBAction func nameCardsSearchAction(_ sender: Any) {
         if let name = nameCardsBox.text{
             if name != ""{
-                
+                //MARK: Проверка на наличие карты в базе Realm
                 let cardCheck = SingleCard()
                 cardCheck.name = name
                 do{
@@ -38,6 +38,7 @@ class CardsViewController: UIViewController {
                         destViewController.modalTransitionStyle = .crossDissolve
                         self.present(destViewController, animated: true, completion: nil)
                     }else{
+                        //MARK: замена пробелов в названии карты
                         let nameWOSpaces = name.replacingOccurrences(of: " ", with: "%20")
                         
                         //MARK: Формирую строку запроса на основе введенного названия карты
@@ -97,9 +98,6 @@ class CardsViewController: UIViewController {
                 }catch let error as NSError{
                     print(error)
                 }
-                
-                
-                
             }else{
                 //MARK: Если пользователь ничего не ввел в TextField
                 nameCardsBox.text = nil
@@ -124,7 +122,7 @@ class CardsViewController: UIViewController {
                             //MARK: Парсинг полученной структурки в структурку hsCard
                             let json = try JSONDecoder().decode([hsCard].self, from: data!)
                             DispatchQueue.main.async {
-                                //MARK: Отбор карт с картинками. То что без картинок отсеить. В идеале модернизировать как-то, чтобы отображать те карты, у которых нет картинок.
+                                //MARK: Отбор карт с картинками. То что без картинок отсеить.
                                 let cardsWOImage = checkCardsWOImage(sourceArray: json)
                                 //MARK: Удаление отсутствующих дополнений
                                 let cardsOfTheNecessaryTypes = deleteCardHeroType(sourceArray: cardsWOImage)

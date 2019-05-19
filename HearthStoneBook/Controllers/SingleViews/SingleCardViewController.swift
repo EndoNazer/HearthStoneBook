@@ -29,15 +29,7 @@ class SingleCardViewController: UIViewController {
         super.viewDidLoad()
         
         //MARK: Отображение картинок
-        let urlCommon = URL(string: img)
-        let urlGold = URL(string: imgGold)
-        
-        commonImageView.kf.indicatorType = .activity
-        goldImageView.kf.indicatorType = .activity
-        
-        commonImageView.kf.setImage(with: urlCommon)
-        goldImageView.kf.setImage(with: urlGold)
-        cardNameLabel.text = name
+        displayCardImages(img: self.img, imgGold: self.imgGold, name: self.name, commonImgView: commonImageView, goldImgView: goldImageView, nameLabel: cardNameLabel)
         
     }
     

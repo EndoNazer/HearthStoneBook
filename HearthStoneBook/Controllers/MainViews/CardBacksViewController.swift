@@ -59,8 +59,7 @@ extension CardBacksViewController: UICollectionViewDataSource, UICollectionViewD
         guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardBackViewController") as? SingleCardBackViewController else{
             return
         }
-        
-        destViewController.cardBackIndex = indexPath.row
+        destViewController.cardBack = cardBacks?[indexPath.row] ?? hsCardBack()
         destViewController.modalTransitionStyle = .crossDissolve
         self.present(destViewController, animated: true, completion: nil)
     }
