@@ -26,7 +26,11 @@ class CardsViewController: UIViewController {
                 cardCheck.name = name
                 do{
                     let realm = try Realm()
+                    //MARK: Добавление размытия и индикатора
+                    blurAndActivityEffectAdd(viewController: self)
                     if let check = realm.object(ofType: SingleCard.self, forPrimaryKey: cardCheck.name){
+                        //MARK: Удаление размытия и индикатора
+                        blurAndActivityEffectRemove(viewController: self)
                         //MARK: Переход на одиночную вьюху
                         let singleStoryboard = UIStoryboard(name: "SingleViews", bundle: Bundle.main)
                         guard let destViewController = singleStoryboard.instantiateViewController(withIdentifier: "SingleCardViewController") as? SingleCardViewController  else {
@@ -38,7 +42,7 @@ class CardsViewController: UIViewController {
                         destViewController.modalTransitionStyle = .crossDissolve
                         self.present(destViewController, animated: true, completion: nil)
                     }else{
-                        //MARK: замена пробелов в названии карты
+                        //MARK: Замена пробелов в названии карты
                         let nameWOSpaces = name.replacingOccurrences(of: " ", with: "%20")
                         
                         //MARK: Формирую строку запроса на основе введенного названия карты
@@ -54,6 +58,8 @@ class CardsViewController: UIViewController {
                                     //MARK: Парсинг полученной структурки в структурку hsCard
                                     let json = try JSONDecoder().decode([hsCard].self, from: data!)
                                     DispatchQueue.main.async {
+                                        //MARK: Удаление размытия и индикатора
+                                        blurAndActivityEffectRemove(viewController: self)
                                         searchCard = json.map({ (card: hsCard) in return card}).first ?? hsCard()
                                         
                                         //MARK: Создание объекта Realm и переход на новую View
@@ -84,12 +90,17 @@ class CardsViewController: UIViewController {
                                 } catch {
                                     print(error)
                                     DispatchQueue.main.sync {
+                                        //MARK: Удаление размытия и индикатора
+                                        blurAndActivityEffectRemove(viewController: self)
+                                        
                                         self.nameCardsBox.text = nil
                                         self.nameCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
                                     }
                                 }
                             } else {
                                 print(error ?? "Undefined error")
+                                //MARK: Удаление размытия и индикатора
+                                blurAndActivityEffectRemove(viewController: self)
                             }
                         })
                         request.resume()
