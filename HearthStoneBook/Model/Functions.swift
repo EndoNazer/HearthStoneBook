@@ -30,7 +30,7 @@ func checkCardsWOImage(sourceArray: [hsCardBack]) -> [hsCardBack]{
     }
     return array
 }
-
+//MARK: Удаление карт типа Hero
 func deleteCardHeroType(sourceArray: [hsCard]) -> [hsCard]{
     var array: [hsCard] = []
     for someCard in sourceArray{
@@ -40,7 +40,7 @@ func deleteCardHeroType(sourceArray: [hsCard]) -> [hsCard]{
     }
     return array
 }
-
+//MARK: Удаление карт без типа
 func deleteCardMissingType(sourceArray: [hsCard]) -> [hsCard]{
     var array: [hsCard] = []
     for someCard in sourceArray{
@@ -51,11 +51,8 @@ func deleteCardMissingType(sourceArray: [hsCard]) -> [hsCard]{
     return array
 }
 
-
-
 //MARK: Создание запроса к API
 func setRequest(URL: URL) -> URLRequest{
-    //TODO: При неверном имени карты выдает ошибку, так как nil. Исправить!
     var hsRequest = URLRequest(url: URL)
     hsRequest.allHTTPHeaderFields = hsHeaders
     hsRequest.httpMethod = "GET"
@@ -65,9 +62,47 @@ func setRequest(URL: URL) -> URLRequest{
     return hsRequest
 }
 
-//func searchClass(class: String, mainClass: ){
-//
-//}
+//MARK: Функция для поиска по классу
+func gettingResponseSearchClass(request: URLRequest, viewController: UIViewController, cardBox: UITextField){
+    let request = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
+        if error == nil {
+            do {
+                //MARK: Парсинг полученной структурки в структурку hsCard
+                let json = try JSONDecoder().decode([hsCard].self, from: data!)
+                DispatchQueue.main.async {
+                    //MARK: Удаление размытия и индикатора
+                    blurAndActivityEffectRemove(viewController: viewController)
+                    //MARK: Отбор карт с картинками. То что без картинок отсеить.
+                    let cardsWOImage = checkCardsWOImage(sourceArray: json)
+                    //MARK: Удаление отсутствующих дополнений
+                    let cardsOfTheNecessaryTypes = deleteCardHeroType(sourceArray: cardsWOImage)
+                    searchCardsOfClass = deleteCardMissingType(sourceArray: cardsOfTheNecessaryTypes)
+                    //MARK: Переход на вьюху с полученными картонками(картами)
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    guard let destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardsByClassViewController") as? CardsByClassViewController  else {
+                        return
+                    }
+                    destViewController.modalTransitionStyle = .crossDissolve
+                    viewController.present(destViewController, animated: true, completion: nil)
+                }
+            } catch {
+                print(error)
+                DispatchQueue.main.sync {
+                    //MARK: Удаление размытия и индикатора
+                    blurAndActivityEffectRemove(viewController: viewController)
+                    
+                    cardBox.text = nil
+                    cardBox.attributedPlaceholder = NSAttributedString(string:"Enter correct class", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+                }
+            }
+        } else {
+            print(error ?? "Undefined error")
+            //MARK: Удаление размытия и индикатора
+            blurAndActivityEffectRemove(viewController: viewController)
+        }
+    })
+    request.resume()
+}
 
 //MARK: Функция для отображения картинок и имени карты в SingleView
 func displayCardImages(img: String, imgGold: String, name: String, commonImgView: UIImageView, goldImgView: UIImageView, nameLabel: UILabel){
@@ -113,7 +148,7 @@ func blurAndActivityEffectRemove(viewController: UIViewController){
             activityIndicator.removeFromSuperview()
     }
 }
-
+//MARK: Расширение для вставки картинок в ImageView
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
         contentMode = mode

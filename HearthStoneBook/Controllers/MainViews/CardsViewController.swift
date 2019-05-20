@@ -127,45 +127,8 @@ class CardsViewController: UIViewController {
                 let hsRequest = setRequest(URL: classCardsURL!)
                 //MARK: Добавление размытия и индикатора
                 blurAndActivityEffectAdd(viewController: self)
-                
-                let request = URLSession.shared.dataTask(with: hsRequest, completionHandler: {data, response, error in
-                    if error == nil {
-                        do {
-                            //MARK: Парсинг полученной структурки в структурку hsCard
-                            let json = try JSONDecoder().decode([hsCard].self, from: data!)
-                            DispatchQueue.main.async {
-                                //MARK: Удаление размытия и индикатора
-                                blurAndActivityEffectRemove(viewController: self)
-                                //MARK: Отбор карт с картинками. То что без картинок отсеить.
-                                let cardsWOImage = checkCardsWOImage(sourceArray: json)
-                                //MARK: Удаление отсутствующих дополнений
-                                let cardsOfTheNecessaryTypes = deleteCardHeroType(sourceArray: cardsWOImage)
-                                searchCardsOfClass = deleteCardMissingType(sourceArray: cardsOfTheNecessaryTypes)
-                                //MARK: Переход на вьюху с полученными картонками(картами)
-                                let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                                guard let destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardsByClassViewController") as? CardsByClassViewController  else {
-                                    return
-                                }
-                                destViewController.modalTransitionStyle = .crossDissolve
-                                self.present(destViewController, animated: true, completion: nil)
-                            }
-                        } catch {
-                            print(error)
-                            DispatchQueue.main.sync {
-                                //MARK: Удаление размытия и индикатора
-                                blurAndActivityEffectRemove(viewController: self)
-                                
-                                self.classCardsBox.text = nil
-                                self.classCardsBox.attributedPlaceholder = NSAttributedString(string:"Enter correct class", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-                            }
-                        }
-                    } else {
-                        print(error ?? "Undefined error")
-                        //MARK: Удаление размытия и индикатора
-                        blurAndActivityEffectRemove(viewController: self)
-                    }
-                })
-                request.resume()
+                //MARK: Поиск по классу
+                gettingResponseSearchClass(request: hsRequest, viewController: self, cardBox: classCardsBox)
             }else{
                 classCardsBox.text = nil
                 classCardsBox.placeholder = "Please enter the class"
