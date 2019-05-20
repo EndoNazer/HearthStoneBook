@@ -30,15 +30,4 @@ class SingleCardViewController: UIViewController {
         //MARK: Отображение картинок
         displayCardImages(img: self.img, imgGold: self.imgGold, name: self.name, commonImgView: commonImageView, goldImgView: goldImageView, nameLabel: cardNameLabel)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
