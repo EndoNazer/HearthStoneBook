@@ -18,7 +18,6 @@ class CardsByClassViewController: UIViewController {
     @IBAction func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    //var cards: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

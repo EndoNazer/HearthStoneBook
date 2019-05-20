@@ -97,6 +97,7 @@ func blurAndActivityEffectAdd(viewController: UIViewController){
     blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     
     let activityView = UIActivityIndicatorView(frame: blurEffectView.frame)
+    activityView.style = .whiteLarge
     activityView.tag = 101
     activityView.isHidden = false
     activityView.startAnimating()
