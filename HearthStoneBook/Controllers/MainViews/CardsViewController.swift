@@ -111,7 +111,7 @@ class CardsViewController: UIViewController {
             }else{
                 //MARK: Если пользователь ничего не ввел в TextField
                 nameCardsBox.text = nil
-                nameCardsBox.placeholder = "Please enter the name"
+                self.nameCardsBox.attributedPlaceholder = NSAttributedString(string:"Please enter the name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
             }
         }
     }
@@ -131,7 +131,7 @@ class CardsViewController: UIViewController {
                 gettingResponseSearchClass(request: hsRequest, viewController: self, cardBox: classCardsBox)
             }else{
                 classCardsBox.text = nil
-                classCardsBox.placeholder = "Please enter the class"
+                self.classCardsBox.attributedPlaceholder = NSAttributedString(string:"Please enter the class", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
             }
         }
     }
